@@ -49,14 +49,12 @@ This allows the agent to collect information step-by-step and trigger the lead c
 
 ## 📂 Project Structure
 
+```text
 social-to-lead-agent/
-├── agent.py              # Core conversational agent logic
-├── knowledge_base.json   # Pricing and policy knowledge base
-├── requirements.txt      # Project dependencies
+├── agent.py
+├── knowledge_base.json
+├── requirements.txt
 
-This project demonstrates a simple, stateful conversational agent that converts user interest into qualified leads using intent detection and a local knowledge base.
-
----
 
 ## ▶️ How to Run the Project
 
