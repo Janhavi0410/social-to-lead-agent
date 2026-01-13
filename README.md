@@ -1,86 +1,111 @@
-# Social-to-Lead Conversational Agent
+🧠 Social-to-Lead Conversational Agent
 
-This project is a simple conversational AI agent built to demonstrate how product-related conversations can be converted into qualified leads using intent detection and a local knowledge base.
+A lightweight conversational AI agent that demonstrates how product-focused conversations can be converted into qualified leads using intent detection, a local knowledge base, and simple state management.
 
-The agent simulates a real-world workflow where a user asks about pricing, shows interest in a product, and is then guided through a lead capture process.
+This project simulates a real-world SaaS workflow where a user explores pricing, signals purchase intent, and is smoothly guided through a lead capture process—without unnecessary complexity or external dependencies.
 
----
+🚀 Project Overview
 
-## 🚀 Project Overview
-
-The agent is designed for a fictional SaaS product called **AutoStream**, which provides automated video editing tools for content creators.
+The agent is built around a fictional SaaS product called AutoStream, an automated video editing platform for content creators.
 
 The agent can:
-- Greet users
-- Answer pricing and plan-related questions
-- Detect high purchase intent
-- Collect lead details (name, email, platform)
-- Trigger a lead capture tool only after all required information is collected
 
-This mirrors how early-stage AI assistants are used in real products to qualify and convert interested users.
+Greet users and handle basic conversation flow
 
----
+Answer pricing and plan-related questions
 
-## 🧠 Design Approach & Decisions
+Detect high purchase intent
 
-### Intent Detection
-Intent detection is implemented using **rule-based keyword matching** instead of a machine learning classifier.  
-This was a deliberate choice to keep the system deterministic, easy to debug, and predictable for an early-stage product.
+Collect lead information step-by-step (name, email, platform)
 
-High-intent detection is prioritized over informational queries to ensure that users who express purchase intent are not interrupted by additional pricing responses.
+Trigger a lead capture action only after all required details are collected
 
-### Knowledge Retrieval (RAG)
-Pricing and policy information is stored in a local JSON file and retrieved at runtime.  
-This simulates a lightweight Retrieval-Augmented Generation (RAG) setup without adding unnecessary complexity such as vector databases or embeddings.
+This mirrors how early-stage AI assistants are used in production environments to qualify interest before handing users off to sales or onboarding systems.
 
-### State Management
-The agent maintains a simple in-memory state to track user-provided details during the conversation.  
-This allows the agent to collect information step-by-step and trigger the lead capture tool only when all required data is available.
+🧠 Design Decisions
+Intent Detection
 
----
+Intent detection is implemented using rule-based keyword matching rather than a machine learning model.
 
-## 🛠️ Tech Stack
+This choice keeps the system:
 
-- Python 3
-- Standard Python libraries (`json`, `typing`)
-- CLI-based interaction (no external APIs required)
+Deterministic and predictable
 
----
+Easy to debug and extend
 
-## 📂 Project Structure
+Suitable for early-stage or prototype environments
 
-```text
+High-intent queries (e.g., “I want the pro plan”) are prioritized over informational requests to avoid unnecessary interruptions once a user is ready to convert.
+
+Knowledge Retrieval (RAG-lite)
+
+Pricing and plan information is stored in a local knowledge_base.json file and retrieved at runtime.
+
+This simulates a lightweight Retrieval-Augmented Generation (RAG) approach without:
+
+Vector databases
+
+Embeddings
+
+External APIs
+
+The result is a simple, transparent system that still reflects real-world architecture patterns.
+
+State Management
+
+The agent maintains an in-memory conversation state to track user-provided information during the session.
+
+This enables:
+
+Progressive data collection
+
+Context-aware responses
+
+Safe triggering of the lead capture process only when all required fields are present
+
+🛠️ Tech Stack
+
+Python 3
+
+Standard libraries (json, typing)
+
+CLI-based interaction
+
+No external APIs or frameworks
+
+Minimal dependencies. Maximum clarity. No drama.
+
+📂 Project Structure
 social-to-lead-agent/
-├── agent.py
-├── knowledge_base.json
-├── requirements.txt
+├── agent.py              # Core conversational logic
+├── knowledge_base.json   # Pricing and product data
+├── requirements.txt      # Dependencies
+
+▶️ How to Run
+
+Clone the repository
+
+git clone https://github.com/Janhavi0410/social-to-lead-agent.git
 
 
-## ▶️ How to Run the Project
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/Janhavi0410/social-to-lead-agent.git
 Navigate to the project directory
 
-bash
-Copy code
 cd social-to-lead-agent
+
+
 Install dependencies
 
-bash
-Copy code
 pip install -r requirements.txt
+
+
 Run the agent
 
-bash
-Copy code
 python agent.py
-Interact with the agent through the terminal.
+
+
+Interact with the agent directly through the terminal.
 
 💬 Sample Conversation Flow
-vbnet
-Copy code
 User: hi
 Agent: Hi! I can help you with AutoStream pricing or plans.
 
@@ -89,14 +114,18 @@ Agent: [Displays pricing details]
 
 User: i want to try the pro plan
 Agent: Great! I just need a few details to get you started.
-The agent then collects the user’s name, email, and creator platform before capturing the lead.
+
+
+The agent then collects the user’s name, email, and content platform before capturing the lead.
+
+Simple. Linear. Effective.
 
 🔮 Future Improvements
+
 Replace rule-based intent detection with an ML-based classifier
 
 Add persistent storage for captured leads
 
-Integrate with messaging platforms such as WhatsApp using webhooks
+Integrate with messaging platforms (e.g., WhatsApp, Slack) via webhooks
 
 Expand the knowledge base dynamically from external sources
-
