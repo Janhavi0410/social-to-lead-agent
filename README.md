@@ -50,49 +50,55 @@ This allows the agent to collect information step-by-step and trigger the lead c
 ## 📂 Project Structure
 
 social-to-lead-agent/
-├── agent.py # Main conversational agent logic
-├── knowledge_base.json # Pricing and policy knowledge base
-├── requirements.txt # Project dependencies
+├── agent.py              # Core conversational agent logic
+├── knowledge_base.json   # Pricing and policy knowledge base
+├── requirements.txt      # Project dependencies
 
+This project demonstrates a simple, stateful conversational agent that converts user interest into qualified leads using intent detection and a local knowledge base.
 
 ---
 
 ## ▶️ How to Run the Project
 
-1. Clone the repository:
+1. **Clone the repository**
    ```bash
-   git clone https://github.com/<your-username>/social-to-lead-agent.git
-Navigate to the project directory:
+   git clone https://github.com/Janhavi0410/social-to-lead-agent.git
+Navigate to the project directory
 
+bash
+Copy code
 cd social-to-lead-agent
+Install dependencies
 
+bash
+Copy code
+pip install -r requirements.txt
+Run the agent
 
-Run the agent:
-
+bash
+Copy code
 python agent.py
+Interact with the agent through the terminal.
 
-
-Interact with the agent via the terminal.
-
-💬 Example Conversation Flow
+💬 Sample Conversation Flow
+vbnet
+Copy code
 User: hi
 Agent: Hi! I can help you with AutoStream pricing or plans.
 
 User: i want pricing
-Agent: [Shows pricing details]
+Agent: [Displays pricing details]
 
 User: i want to try the pro plan
 Agent: Great! I just need a few details to get you started.
-Agent: What is your name?
-Agent: Your email address?
-Agent: Which platform do you create on?
-✅ Lead captured successfully
-🔮 Future Improvements
+The agent then collects the user’s name, email, and creator platform before capturing the lead.
 
+🔮 Future Improvements
 Replace rule-based intent detection with an ML-based classifier
 
 Add persistent storage for captured leads
 
-Integrate the agent with messaging platforms like WhatsApp using webhooks
+Integrate with messaging platforms such as WhatsApp using webhooks
 
 Expand the knowledge base dynamically from external sources
+
