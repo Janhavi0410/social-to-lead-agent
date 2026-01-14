@@ -1,5 +1,7 @@
 # Social-to-Lead Conversational Agent
 
+"This implementation focuses on agentic flow, intent handling, and controlled tool execution using deterministic logic. While an LLM-based framework such as LangGraph or AutoGen could be integrated, a rule-based approach was chosen here to ensure predictability, debuggability, and clarity of reasoning within the assignment scope.”
+
 A lightweight conversational AI agent that converts product-related conversations into **qualified leads** using intent detection and a local knowledge base.
 
 Built as a CLI-based prototype to demonstrate how early-stage AI assistants can qualify interest before initiating lead capture.
