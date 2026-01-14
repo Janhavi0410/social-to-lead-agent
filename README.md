@@ -75,6 +75,20 @@ python agent.py
 
 ---
 
+## WhatsApp Integration (Conceptual)
+
+To integrate this conversational agent with WhatsApp, the system would use the WhatsApp Business API in combination with a webhook-based backend service.
+
+Incoming WhatsApp messages from users would be forwarded to a webhook endpoint hosted by the application (for example, using a lightweight framework such as FastAPI or Flask). Each incoming message would include the user’s WhatsApp number, message content, and metadata. This message would then be passed to the agent logic for intent detection and response generation.
+
+The agent’s conversation state (such as name, email, and creator platform) would be stored against the user’s WhatsApp ID, allowing the agent to maintain context across multiple message exchanges. Based on the detected intent, the agent would either respond with pricing information retrieved from the knowledge base or initiate the lead qualification flow.
+
+Once all required lead details are collected, the mock lead capture function could be replaced with a real backend service or CRM integration. The agent’s response would then be sent back to the user via the WhatsApp Business API, completing the conversational loop.
+
+This webhook-based architecture allows the agent to scale easily, handle multiple concurrent conversations, and integrate seamlessly with existing business systems while maintaining controlled and predictable agent behavior.
+
+---
+
 ## 💬 Example Interaction
 User: hi
 Agent: Hi! I can help you with AutoStream pricing or plans.
